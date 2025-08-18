@@ -89,6 +89,9 @@
   border-bottom-right-radius: 5px;
   flex-shrink: 0;
 }
+.header .orders-link.active {
+  text-decoration: underline;
+}
 
 .header .search-icon {
   height: 20px;
