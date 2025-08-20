@@ -8,6 +8,8 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+window.axios =axios;
+
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -27,7 +29,7 @@ function App() {
     <Routes>
       <Route index element={<HomePage loadCart={loadCart} cart={cart} />} />
       <Route path="checkout" element={<CheckoutPage loadCart={loadCart} cart={cart} />} />
-      <Route path="orders" element={<OrdersPage cart={cart} />} />
+      <Route path="orders" element={<OrdersPage cart={cart} loadCart={loadCart} />} />
       <Route path="tracking/:orderId/:productId" element={<Tracking cart={cart} />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
